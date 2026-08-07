@@ -6,8 +6,8 @@ import (
 	"net/http"
 	"strconv"
 
-	"github.com/kiRiLL3311/Converterplus/feature/converter-service/internal/middleware"
-	"github.com/kiRiLL3311/Converterplus/feature/converter-service/internal/services"
+	"github.com/kiRiLL3311/Converterplus/feature/converter/internal/middleware"
+	"github.com/kiRiLL3311/Converterplus/feature/converter/internal/services"
 )
 
 type RateHandler struct {

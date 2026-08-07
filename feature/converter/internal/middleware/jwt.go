@@ -6,7 +6,7 @@ import (
 	"net/http"
 
 	"github.com/golang-jwt/jwt/v5"
-	"github.com/kiRiLL3311/Converterplus/feature/converter-service/internal/config"
+	"github.com/kiRiLL3311/Converterplus/feature/converter/internal/config"
 )
 
 type contextKey string

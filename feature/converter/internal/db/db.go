@@ -5,7 +5,7 @@ import (
 	"fmt"
 	"log"
 
-	"github.com/kiRiLL3311/Converterplus/feature/converter-service/internal/config"
+	"github.com/kiRiLL3311/Converterplus/feature/converter/internal/config"
 	_ "github.com/lib/pq"
 )
 

@@ -4,8 +4,8 @@ import (
 	"math"
 	"sort"
 
-	"github.com/kiRiLL3311/Converterplus/feature/converter-service/internal/client"
-	"github.com/kiRiLL3311/Converterplus/feature/converter-service/internal/models"
+	"github.com/kiRiLL3311/Converterplus/feature/converter/internal/client"
+	"github.com/kiRiLL3311/Converterplus/feature/converter/internal/models"
 )
 
 type RateRepository interface {
@@ -71,6 +71,7 @@ func (s *RateService) Convert(from, to string, amount float64) (float64, float64
 }
 
 // Currencies missing from the historical feed but pegged (or closely tied)
+// to another code — reuse that code's day-over-day ratio.
 var previousRateAliases = map[string]string{
 	"FOK": "DKK", // Faroese króna tracks Danish krone
 	"KID": "AUD", // Kiribati dollar uses Australian dollar
@@ -107,7 +108,7 @@ func (s *RateService) SyncRates(base string) error {
 }
 
 // fillMissingPreviousRates ensures every live rate gets a previous value so
-// the Change column is never blank for codes absent from the historical API
+// the Change column is never blank for codes absent from the historical API.
 func fillMissingPreviousRates(latest, previous map[string]float64) {
 	for code, peg := range previousRateAliases {
 		if _, ok := previous[code]; ok {

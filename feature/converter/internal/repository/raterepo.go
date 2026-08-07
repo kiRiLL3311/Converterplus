@@ -3,7 +3,7 @@ package repository
 import (
 	"database/sql"
 
-	"github.com/kiRiLL3311/Converterplus/feature/converter-service/internal/models"
+	"github.com/kiRiLL3311/Converterplus/feature/converter/internal/models"
 )
 
 type RateRepository struct {
